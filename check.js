@@ -1,14 +1,21 @@
 function checkifopera()
 {
-  console.log(platform);
-  if(platfrom.name=="Opera")
+  let userAgentString =  
+                navigator.userAgent; 
+  let operaAgent =  
+          userAgentString.indexOf("OP") > -1; 
+            
+  let chromeAgent =  
+                userAgentString.indexOf("Chrome") > -1; 
+             
+  if ((chromeAgent) && (operaAgent))  
+                chromeAgent = false; 
+  if(operaAgent===true)
   {
-    console.log(platform);
-  document.write("<h1>This website doesn't support Opera/GX go open it in chrome or something.</h1>");
+    document.write("<h1>This website doesn't support opera! Go open it on chrome or something like that...</h1>")
 setTimeout(function()
 {
   window.location.replace("https://youtu.be/0NTl_SXSgd4?si=b3cUAS1yNpS-kUjl&t=10");
 }, 10000)
-  }
 }
 checkifopera();
