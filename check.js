@@ -3,6 +3,7 @@ function checkifopera()
   console.log(platform);
   if(platfrom.name=="Opera")
   {
+    console.log(platform);
   document.write("<h1>This website doesn't support Opera/GX go open it in chrome or something.</h1>");
 setTimeout(function()
 {
