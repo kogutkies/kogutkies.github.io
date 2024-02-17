@@ -18,4 +18,5 @@ setTimeout(function()
   window.location.replace("https://youtu.be/0NTl_SXSgd4?si=b3cUAS1yNpS-kUjl&t=10");
 }, 10000)
 }
+}
 checkifopera();
