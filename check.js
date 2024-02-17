@@ -14,4 +14,5 @@ function checkifopera()
   {
   window.location.replace("redirect.html");
 }
+}
 checkifopera();
